@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Annotation App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Youtube Comments Annotation</h1>
+        
+        <div class="stats">
+            <div>Total: <span id="total">0</span></div>
+            <div>😡 -1: <span id="neg">0</span></div>
+            <div>😐 0: <span id="neu">0</span></div>
+            <div>😊 1: <span id="pos">0</span></div>
+        </div>
+
+        <div id="comments"></div>
+
+        <div class="pagination">
+            <button onclick="prevPage()" class="nav-btn">Prev</button>
+            <button onclick="nextPage()" class="nav-btn">Next</button>
+            <button onclick="saveAll()" class="nav-btn save-btn">💾 Save</button>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
